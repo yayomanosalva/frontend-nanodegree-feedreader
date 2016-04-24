@@ -1,0 +1,25 @@
+{
+  "name": "frontend-nanodegree-feedreader",
+  "version": "0.0.1",
+  "description": "Edit the allFeeds variable in ./js/app.js to make the provided test fail and see how Jasmine visualizes this failure in your application.",
+  "author": {
+    "name": "Jair Manosalva",
+    "email": "yayomanosalva@gmail.com"
+  },
+  "script": {
+    "start": "npm install && gulp"
+  },
+  "dependencies": {
+    "async": "^1.5.2"
+  },
+  "devDependencies": {
+    "axios": "^0.8.1",
+    "browser-sync": "^2.12.3",
+    "gulp": "^3.9.0",
+    "gulp-html-replace": "^1.5.5",
+    "gulp-jasmine": "^2.3.0",
+    "gulp-minify": "0.0.10",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3"
+  }
+}
