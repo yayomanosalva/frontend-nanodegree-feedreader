@@ -10,7 +10,7 @@ var modernizr = require('gulp-modernizr');
 const jasmine = require('gulp-jasmine');
 
 gulp.task('default', () =>
-  gulp.src('jasmine/spec/test.js')
+  gulp.src('jasmine/spec/feedreader.js')
     // gulp-jasmine works on filepaths so you can't have any plugins before it 
     .pipe(jasmine())
 );
@@ -52,5 +52,5 @@ gulp.task('serve', function() {
     gulp.watch('./src/index.html', ['content']);
     gulp.watch('./src/js/*.js', ['js']);
     gulp.watch('./src/css/*.css', ['css']);
-    gulp.watch('./src/jasmine/spec/*.css', ['jasmine']);
+    gulp.watch('./src/jasmine/spec/*.js', ['js']);
 });
