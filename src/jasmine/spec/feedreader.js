@@ -31,7 +31,7 @@ $(function() {
          * and that the URL is not empty.
         */
         
-        it('URL defined and that the URL is not empty.', function() {
+        it('the URL defined and that the URL is not empty.', function() {
             beforeEach(function() {                
                 expect(allFeeds.url).toBeDefined();
                 expect(allFeeds.url.length).not.toBe(0);
@@ -43,7 +43,7 @@ $(function() {
          * and that the name is not empty.
          */
 
-        it('name defined and that the name is not empty.', function() {
+        it('the name defined and that the name is not empty.', function() {
             beforeEach(function() {                
                 expect(allFeeds.name).toBeDefined();
                 expect(allFeeds.name.length).not.toBe(0);
@@ -60,7 +60,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         
-        var Body = document.body;
+        var Body = $('body');
 
         it('the menu element is hidden by default.', function() {
             expect(Body.className).toContain("menu-hidden");            
@@ -71,12 +71,12 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
         */
-        var menuIcons = document.$(".menu-icon-link").eq(0);
+        var menuIcons = $(".menu-icon-link").eq(0);
 
         it('does the menu display when clicked and does it hide when clicked again.', function() {
             menuIcons.click();
             expect(Body.className).toContain("menu-hidden"); 
-
+            menuIcons.click();
             expect(Body.className).not.toContain("menu-hidden");        
         });
 
@@ -92,6 +92,22 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
         */
+        
+
+        beforeEach(function(done) {
+            loadFeed(function() {
+                var container = $('.feed');
+                done();
+            });
+        });
+
+        it("the loadFeed function is called and completes its work", function(done) {
+            loadFeed(function(result) {
+                espect(result).toContain(container);
+                done();
+            });
+        });
+
     });
 
 
@@ -103,8 +119,20 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
         */
+        
 
     });
 
         
 }());
+
+/*
+4- TODO: Escribe una prueba que asegura la visibilidad menú cambia cuando se hace clic en el icono de menú. Esta prueba debe tener dos expectativas: hace la visualización del menú cuando se hace clic y no se ocultan cuando se hace clic de nuevo.
+
+5- TODO: Escribir un ensayo que aseguren cuando la función de la carga de alimentación se llama y completa su trabajo, existe al menos un sencillo.
+elemento de entrada dentro del contenedor .feed.
+Recuerde, alimentación de carga () es asíncrona lo que esta prueba requiere el uso de la función asíncrona hecho () Jazmín y beforeeach.
+
+6- TODO: Escribir un ensayo que aseguren, cuando una nueva alimentación se carga por la función de alimentación de carga que el contenido cambia en realidad.
+Recuerde, cargado () es asíncrono.
+*/
