@@ -52,5 +52,6 @@ and open the app in the your browser automaticly
 Click in the diferent links and see the test
 
 [logo]: https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/jasmine-test.png "jasmine-test"
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 
 
