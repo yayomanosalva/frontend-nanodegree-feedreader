@@ -44,8 +44,7 @@ you see these
 ```
 
 and open the app in the your browser automaticly
-![alt text][logo]
-[logo]: https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/chrome.png "server gulp"
+![This is the alt tag](https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/chrome.png)
 
 ## Test Driven Development (TDD) interactive
 
