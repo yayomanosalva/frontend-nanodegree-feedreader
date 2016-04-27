@@ -50,6 +50,6 @@ and open the app in the your browser automaticly
 ## Test Driven Development (TDD) interactive
 
 Click in the diferent links and see the test:
-![alt text](https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/jasmine-test.png "jasmine-test links")
+![alt text](https://github.com/yayomanosalva/frontend-nanodegree-feedreader/blob/dev/img/jasmine-test.png "jasmine-test links")
 
 
