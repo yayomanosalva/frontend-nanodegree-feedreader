@@ -44,12 +44,12 @@ you see these
 ```
 
 and open the app in the your browser automaticly
-![](https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/chrome.png)
+![alt text](https://github.com/yayomanosalva/frontend-nanodegree-feedreader/blob/dev/img/chrome.png "jasmine-test browser")
+
 
 ## Test Driven Development (TDD) interactive
 
 Click in the diferent links and see the test:
-
-![]: https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/jasmine-test.png "jasmine-test"
+![alt text](https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/jasmine-test.png "jasmine-test links")
 
 
