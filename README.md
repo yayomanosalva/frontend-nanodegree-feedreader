@@ -45,14 +45,14 @@ you see these
 
 and open the app in the your browser automaticly
 
-[logo]: https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/chrome.png "server gulp"
+![alt text](https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/chrome.png "server gulp")
 
 ## Test Driven Development (TDD) interactive
 
-Click in the diferent links and see the test
+Click in the diferent links and see the test:
+![alt text](https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/jasmine-test.png "jasmine-test")
+![alt text][logo]
 
 [logo]: https://github.com/yayomanosalva/frontend-nanodegree-feedreader/tree/dev/img/jasmine-test.png "jasmine-test"
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 
