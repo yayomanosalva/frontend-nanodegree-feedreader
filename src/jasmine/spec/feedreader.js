@@ -1,11 +1,4 @@
 /* feedreader.js
- *
- * This is the spec file that Jasmine will read and contains
- * all of the tests that will be run against your application.
- */
-
-/* We're placing all of our tests within the $() function,
- * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
 $(function() {
@@ -14,39 +7,30 @@ $(function() {
     * feeds definitions, the allFeeds variable in our application.
     */
     describe('RSS Feeds', function() {
-        /* This is our first test - it tests to make sure that the
-         * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
+        /*  What happens when you change allFeeds in app.js to be 
+         *  an empty array and refresh the
+         *  page?
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
 
-        /* 1- TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-        */
-        
+        /* 1- it has a URL defined and that the URL is not empty.*/
+
         it('the URL defined and that the URL is not empty.', function() {
-            beforeEach(function() {                
-                expect(allFeeds.url).toBeDefined();
-                expect(allFeeds.url.length).not.toBe(0);
-            });            
+            allFeeds.forEach(function(entry) {
+                expect(entry.url).toBeDefined();
+                expect(entry.url.length).not.toBe(0);
+            });          
         });
 
-        /* 2- TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
+        /* 2- it has a name defined and that the name is not empty.*/
 
         it('the name defined and that the name is not empty.', function() {
-            beforeEach(function() {                
-                expect(allFeeds.name).toBeDefined();
-                expect(allFeeds.name.length).not.toBe(0);
+            allFeeds.forEach(function(entry) {
+                expect(entry.name).toBeDefined();
+                expect(entry.name.length).not.toBe(0);
             });            
         }); 
     });
@@ -54,16 +38,12 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
-        /* 3- TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+        /* 3- performing the hiding/showing of the menu element.*/
         
-        var Body = $('body');
+        var body = $('body');
 
-        it('the menu element is hidden by default.', function() {
-            expect(Body.className).toContain("menu-hidden");            
+        it('the menu element class is "menu-hidden" by default.', function() {
+            expect(body.className).toContain("menu-hidden");            
         });
 
          /* 4- TODO: Write a test that ensures the menu changes
@@ -71,13 +51,13 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
         */
-        var menuIcons = $(".menu-icon-link").eq(0);
+        var menuIcons = $('.menu-icon-link');
 
-        it('does the menu display when clicked and does it hide when clicked again.', function() {
+        it('when clicked hamburger menu changes class to "menu-hidden" and it changes when clicked again.', function() {
             menuIcons.click();
-            expect(Body.className).toContain("menu-hidden"); 
+            expect(body.className).toContain("menu-hidden"); 
             menuIcons.click();
-            expect(Body.className).not.toContain("menu-hidden");        
+            expect(body.className).not.toContain("menu-hidden");        
         });
 
     });
@@ -92,22 +72,18 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
         */
-        
-
         beforeEach(function(done) {
-            loadFeed(function() {
-                var container = $('.feed');
-                done();
+            loadFeed(0,function() {
+              done();
             });
         });
 
         it("the loadFeed function is called and completes its work", function(done) {
-            loadFeed(function(result) {
-                espect(result).toContain(container);
-                done();
-            });
+            var containers = $('.feed').length;
+            expect(containers).toBeGreaterThan(0);
+            done();
         });
-
+        //console.log(containers);
     });
 
 
@@ -120,6 +96,17 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
         */
         
+        beforeEach(function(done) {
+            loadFeed(function() {
+
+                console.log(container);
+                done();
+            });
+        });
+
+        it("the loadFeed function that the content actually changes", function(done) {
+            
+        });
 
     });
 

@@ -25,7 +25,7 @@ gulp.task('js', function(){
   gulp.src('src/js/*.js')
     .pipe(sourcemaps.init())
       .pipe(uglify())
-      .pipe(concat('app.js'))
+      .pipe(concat('*.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./src/js/min'))
     .pipe(reload({stream: true}))
