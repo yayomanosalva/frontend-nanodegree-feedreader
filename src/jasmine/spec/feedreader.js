@@ -44,7 +44,8 @@ $(function(){
         var hidden = $('menu-hidden');
 
         it('the menu element class is "hidden" by default.', function() {
-            expect(body.className).not.toContain("hidden");
+            //expect(body.className).not.toContain("hidden");
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
         /* 4- TODO: Write a test that ensures the menu changes
@@ -55,11 +56,11 @@ $(function(){
 
         var menuIcons = $('.menu-icon-link');
 
-        it('when clicked hamburger menu changes class to "hidden" and it changes when clicked again.', function() {
+        it('when clicked hamburger menu changes class to "menu-hidden" and it changes when clicked again.', function() {
             menuIcons.click();
-            expect(body.className).toContain("hidden");
+            expect($('body').hasClass('menu-hidden')).not.toBe(true);
             menuIcons.click();
-            expect(body.className).not.toContain("hidden");
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
     });
@@ -90,17 +91,19 @@ $(function(){
         /* 6- new feed is loaded by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
         */
-        var fedd1;
+        var feed1;
         beforeEach(function(done) {
             loadFeed(0,function() {
-                feed1 = $('.feed');
-              done();
+                feed1 = $('.feed').html();
+                loadFeed(1, function() {
+                  done();
+                });
             });
         });
 
         it("new feed is loaded by the loadFeed function", function(done) {
             console.log('This log will run after asyncFunction finishes successfully');
-            var feed2 = $('.feed');
+            var feed2 = $('.feed').html();
             expect(feed1).not.toBe(feed2);
             done();
         });
